@@ -14,13 +14,13 @@ export async function GET(req: NextRequest) {
     let result = [];
     let year: any = new Date().getFullYear();
     let text = await fsPromises.readFile(
-      path.join(__dirname, "..", "..", "data", `${year}.json`),
+      path.join(__dirname, "..", "data", `${year}.json`),
       "utf8"
     );
     if (searchParams.has("year")) {
       year = searchParams.get("year");
       text = await fsPromises.readFile(
-        path.join(__dirname, "..", "..", "data", `${year}.json`),
+        path.join(__dirname, "..", "data", `${year}.json`),
         "utf8"
       );
     }
