@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <main className="w-full flex flex-col min-h-svh h-full justify-center md:items-center bg-neutral-50 text-slate-600 dark:bg-gray-800 dark:text-neutral-200">
-      <div className="md:max-w-4xl w-full bg-slate-200 dark:bg-slate-600 p-4 rounded-sm shadow-md">
+      <div className="md:max-w-4xl w-full bg-slate-200 dark:bg-slate-600 p-4 rounded-sm shadow-md my-10">
         <div className="flex">
           <h1 className="text-center text-2xl font-semibold mb-5 flex-1">
             API Hari Libur Nasional

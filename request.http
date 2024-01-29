@@ -2,4 +2,4 @@
 GET http://localhost:3000/api?year=2024
 
 ###
-GET https://libur-indonesia-api.vercel.app/api?year=2024
+GET https://libur-indonesia-api.vercel.app/api?year=2024&month=8
