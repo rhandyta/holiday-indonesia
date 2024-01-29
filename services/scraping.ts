@@ -35,7 +35,7 @@ function convertStringToDate(dateString: string) {
   const parts = dateString.split("/");
   const month = monthMap[parts[0]];
   const formattedDate = `${month}/${parts[1]}/${parts[2]}`;
-  const dateObject = new Date(formattedDate);
+  const dateObject = new Date(formattedDate).toString();
   return dateObject;
 }
 
@@ -76,7 +76,7 @@ export async function getDaftarLiburNasional(year: string) {
         });
         for (let i = 0; i < hasil.length; i++) {
           outputArray.push({
-            date: new Date(`${hasil[i].split(" ").join("/")}/${year}`).toString(),
+            date: convertStringToDate(new Date(`${hasil[i].split(" ").join("/")}/${year}`).toString()),
             name: eventPart,
           });
         }
