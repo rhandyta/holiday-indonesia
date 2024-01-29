@@ -3,9 +3,6 @@ import fsPromises from "fs/promises";
 import { fileURLToPath } from "url";
 import path from "path";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
   const month = searchParams.get('month')
@@ -14,13 +11,13 @@ export async function GET(req: NextRequest) {
     let result = [];
     let year: any = new Date().getFullYear();
     let text = await fsPromises.readFile(
-      path.join(__dirname, "..", "data", `${year}.json`),
+      path.join(process.cwd(),"data", `${year}.json`),
       "utf8"
     );
     if (searchParams.has("year")) {
       year = searchParams.get("year");
       text = await fsPromises.readFile(
-        path.join(__dirname, "..", "data", `${year}.json`),
+        path.join(process.cwd(),"data", `${year}.json`),
         "utf8"
       );
     }
