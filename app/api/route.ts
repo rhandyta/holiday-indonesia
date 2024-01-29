@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import fsPromises from "fs/promises";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -49,7 +49,8 @@ export async function GET(req: NextRequest) {
   } catch (err: any) {
     return Response.json({
       "message": `Tidak ada tahun ${year}`,
-      "statusCode": 500
+      "statusCode": 500,
+      "error": err
     }, {
       statusText: "ERROR",
       status: 500,
